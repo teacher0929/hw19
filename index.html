@@ -58,33 +58,47 @@
     </nav>
 
     <div class="container-xl px-0 px-xl-2">
-        <div class="splide" role="group" aria-label="Splide Basic HTML Example">
-            <div class="splide__track">
-                <ul class="splide__list">
-                    <li class="splide__slide">
-                        <img src="img/slide-01.jpg" alt="" class="img-fluid">
-                    </li>
-                    <li class="splide__slide">
-                        <img src="img/slide-02.jpg" alt="" class="img-fluid">
-                    </li>
-                    <li class="splide__slide">
-                        <img src="img/slide-03.jpg" alt="" class="img-fluid">
-                    </li>
-                </ul>
+        <div class="row g-0">
+            <div class="col-sm-auto order-2 order-sm-1">
+                <div class="d-flex flex-column justify-content-center align-items-center bg-danger text-white p-4 p-sm-3 p-md-5 h-100">
+                    <div class="mb-4">
+                        <img src="img/white-logo.png" alt="" class="img-fluid">
+                    </div>
+                    <div class="h5 fw-bold mb-4">THE BEST EXPERIENCE</div>
+                    <div>
+                        <a href="#" class="btn btn-light text-danger rounded px-4">Make A Reservation</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm order-1 order-sm-2">
+                <div class="splide" role="group" aria-label="Splide Basic HTML Example">
+                    <div class="splide__track">
+                        <ul class="splide__list">
+                            <li class="splide__slide">
+                                <img src="img/slide-01.jpg" alt="" class="img-fluid">
+                            </li>
+                            <li class="splide__slide">
+                                <img src="img/slide-02.jpg" alt="" class="img-fluid">
+                            </li>
+                            <li class="splide__slide">
+                                <img src="img/slide-03.jpg" alt="" class="img-fluid">
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <script>
+                    document.addEventListener('DOMContentLoaded', function () {
+                        var splide = new Splide('.splide', {
+                            type: 'loop',
+                            autoplay: true,
+                            interval: 5e3,
+                            pagination: 0,
+                        });
+                        splide.mount();
+                    });
+                </script>
             </div>
         </div>
-        <script>
-            document.addEventListener('DOMContentLoaded', function () {
-                var splide = new Splide('.splide', {
-                    type: 'loop',
-                    autoplay: true,
-                    interval: 5e3,
-                    arrows: 0,
-                    pagination: 0,
-                });
-                splide.mount();
-            });
-        </script>
     </div>
 
     <div class="container-xl py-5">
