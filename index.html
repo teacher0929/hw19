@@ -18,7 +18,7 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-md navbar-light bg-light" aria-label="Ninth navbar example">
+    <nav class="navbar navbar-expand-md navbar-light bg-light">
         <div class="container-xl">
             <a class="navbar-brand" href="#">
                 <img src="img/klassy-logo.png" alt="">
@@ -71,7 +71,7 @@
                 </div>
             </div>
             <div class="col-sm order-1 order-sm-2">
-                <div class="splide" role="group" aria-label="Splide Basic HTML Example">
+                <div class="splide splide-slide" role="group">
                     <div class="splide__track">
                         <ul class="splide__list">
                             <li class="splide__slide">
@@ -88,7 +88,7 @@
                 </div>
                 <script>
                     document.addEventListener('DOMContentLoaded', function () {
-                        var splide = new Splide('.splide', {
+                        var splide = new Splide('.splide-slide', {
                             type: 'loop',
                             autoplay: true,
                             interval: 5e3,
@@ -146,6 +146,104 @@
         </div>
     </div>
 
+    <div class="container-xl pt-5">
+        <div class="fw-semibold text-danger mb-3">
+            <i class="bi-dash-lg"></i> OUR MENU
+        </div>
+        <div class="h2 fw-bold mb-5">
+            <div>Our selection of cakes</div>
+            <div>with quality taste</div>
+        </div>
+    </div>
+    <div class="pb-5">
+        <div class="splide splide-menu" role="group">
+            <div class="splide__track">
+                <ul class="splide__list">
+                    <li class="splide__slide">
+                        <div class="position-relative menu-item">
+                            <img src="img/menu-item-01.jpg" alt="" class="img-fluid rounded">
+                            <div class="position-absolute top-0 start-0">
+                                <div class="text-bg-danger p-1 p-sm-2 rounded">
+                                    <div class="h5 fw-bold mb-0">$14</div>
+                                </div>
+                            </div>
+                            <div class="position-absolute bottom-0 text-center w-100">
+                                <div class="text-bg-danger p-2 p-sm-3 rounded">
+                                    <div class="h5 fw-bold mb-0">Chocolate Cake</div>
+                                    <div class="d-none description small mt-3">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laudantium nisi architecto doloribus beatae natus laboriosam.</div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="splide__slide">
+                        <div class="position-relative menu-item">
+                            <img src="img/menu-item-02.jpg" alt="" class="img-fluid rounded">
+                            <div class="position-absolute top-0 start-0">
+                                <div class="text-bg-danger p-1 p-sm-2 rounded">
+                                    <div class="h5 fw-bold mb-0">$22</div>
+                                </div>
+                            </div>
+                            <div class="position-absolute bottom-0 text-center w-100">
+                                <div class="text-bg-danger p-2 p-sm-3 rounded">
+                                    <div class="h5 fw-bold mb-0">Klassy Pancake</div>
+                                    <div class="d-none description small mt-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus aspernatur nihil ea voluptate quidem ratione.</div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="splide__slide">
+                        <img src="img/menu-item-03.jpg" alt="" class="img-fluid rounded">
+                    </li>
+                    <li class="splide__slide">
+                        <img src="img/menu-item-04.jpg" alt="" class="img-fluid rounded">
+                    </li>
+                    <li class="splide__slide">
+                        <img src="img/menu-item-05.jpg" alt="" class="img-fluid rounded">
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                var splide = new Splide('.splide-menu', {
+                    type: 'loop',
+                    autoplay: true,
+                    interval: 5e3,
+                    perPage: 6,
+                    gap: '1rem',
+                    padding: '5rem',
+                    pagination: 0,
+                    arrows: 0,
+                    breakpoints: {
+                        575: {
+                            perPage: 1,
+                        },
+                        767: {
+                            perPage: 2,
+                        },
+                        991: {
+                            perPage: 3,
+                        },
+                        1199: {
+                            perPage: 4,
+                        },
+                        1399: {
+                            perPage: 5,
+                        },
+                    },
+                });
+                splide.mount();
+                document.querySelectorAll('.menu-item').forEach(item => {
+                    item.addEventListener('mouseenter', () => {
+                        item.querySelector('.description').classList.remove('d-none');
+                    });
+                    item.addEventListener('mouseleave', () => {
+                        item.querySelector('.description').classList.add('d-none');
+                    });
+                });
+            });
+        </script>
+    </div>
 
     <div class="container-xl text-center py-5">
         <div class="fw-semibold text-danger mb-3">
